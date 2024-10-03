@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    /*Colors*/
+    --black-primary: #000;
+    --black-secondary: #666666;
+    --black-tertiary: #aaaaaa;
+    --white-primary: #fff;
+    --white-secondary: #c0c0c0;
+    --grey-100: #F7F7F8;
+    --grey-200: #E9E9E9;
+    --cl-primary: #F53E32;
+    --cl-primary-dark: #ce3429;
+    --cl-secondary: #64B496;
+
+    /*Font sizes*/
+    --fs-1: 55px;
+    --fs-2: 32px;
+    --fs-3: 20px;
+    --fs-4: 16px;
+    --fs-5: 14px;
+
+    --border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --fs-1: 32px;
+        --fs-4: 14px;
+    }
+}
+
+.btn {
+    --bs-btn-border-radius: 5px;
+    --bs-btn-padding-x: 1.25rem;
+    min-width: 120px;
+}
+
+.btn-primary {
+    --bs-btn-color: var(--white-primary);
+    --bs-btn-hover-color: var(--white-primary);
+    --bs-btn-active-color: var(--white-primary);
+    --bs-btn-bg: var(--cl-primary);
+    --bs-btn-border-color: var(--cl-primary);
+    --bs-btn-hover-bg: var(--cl-primary-dark);
+    --bs-btn-hover-border-color: var(--cl-primary-dark);
+    --bs-btn-active-bg: var(--cl-primary-dark);
+    --bs-btn-active-border-color: var(--cl-primary-dark);
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: var(--fs-4);
+}
+
+section:not(#hero){padding-block: 50px;margin-top: 50px}
+:is(h1,h2,h3,h4,h5,h6){font-weight:700}
+a{text-decoration: none}
+a.selected{color: var(--cl-primary) !important}
+p{color:var(--black-secondary)}
+
+header > div:first-of-type{box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.123)}
+header .header-top{padding-block: 10px}
+header .header-top nav ul{list-style: none;padding: 0;margin: 0;display: flex;justify-content: space-between;gap: 2.5rem}
+header .header-top nav .link{font-weight: 500;color: var(--black-primary);font-size: var(--fs-5)}
+header .phone img{width: 20px;aspect-ratio: 1}
+header .phone span{font-size: var(--fs-5)}
+header .search{border: 1px solid var(--cl-secondary);border-radius: var(--border-radius);overflow: hidden}
+header .search input[type='text']{padding: 8px;font-size: 12px;border: none}
+header .search select{align-self: stretch;padding-inline: 10px;font-size: 12px;color: var(--black-secondary);border:none;border-left: 1px solid var(--white-secondary)}
+header .search button{align-self: stretch;background-color: var(--cl-primary);min-width: 40px;border: none}
+header .search button img{width: 15px;pointer-events: none}
+header .account-action{display: flex;align-items: center;gap: 5px;align-self: center}
+header .account-action img {width: 20px}
+header .account-action span{font-size: var(--fs-5);font-weight: 500;color: var(--black-primary)}
+
+.hero{background-image: url(../upload/img/hero-img.webp);background-position: center;background-size: cover;position:relative}
+.hero::before{content: "";position: absolute;width: 45px;aspect-ratio: 1;left: 0;top: 0;background-image: url(../upload/img/vector_leaf.png)}
+.hero::after{content: "";position: absolute;left: 0;bottom: 0;width: 60px;aspect-ratio: 1;background-image: url(../upload/img/vector_bowl.png);background-size: cover}
+.hero .content{margin-block: 125px}
+.hero [class^='col-']{position: relative}
+.hero [class^='col-']::before{content: "";position: absolute;top: 0;right: 0;width: 50px;aspect-ratio: 1 / .75;background-image: url(../upload/img/vector_citrus.png);background-position: center;background-size: cover}
+.hero h3{font-size: var(--fs-4);font-weight: 800}
+.hero h3 span{color: var(--cl-primary);position: relative;margin-right: 5px}
+.hero h3 span::after{content: "";position: absolute;left: 0;right: 0;bottom: -2px;height: 2px;background-color: var(--cl-primary)}
+.hero h1{font-size: var(--fs-1);font-weight: 800}
+.hero p{color: var(--black-secondary)}
+
+.promotions .promotion-categories{list-style: none;padding: 0;margin: 0}
+.promotions .promotion{display: grid;place-items: center;padding-block: 5px;background-color:var(--grey-100);border: 1px solid var(--grey-200);border-radius:var(--border-radius);min-height: 58px}
+.promotions .promotion:not(:last-child){margin-bottom: 5px}
+.promotions .promotion a{color: var(--black-primary);font-weight: 600;font-size: var(--fs-)}
+.promotions .promotion:last-of-type a{color: var(--cl-primary)}
+.promotions .promotion span{font-size: var(--fs-5);color: var(--black-secondary)}
+.promotions .promotion-banner:nth-of-type(2) .banner{background-image: url(../upload/img/cake.jpg)}
+.promotions .promotion-banner:nth-of-type(3) .banner{background-image: url(../upload/img/milk.jpg)}
+.promotions .promotion-banner .banner{width: 100%;min-height: 373px;background-size: cover;background-position: center;position: relative; display:flex; align-items:end; justify-content: center; text-align:center; padding-block-end: 25px;border-radius: var(--border-radius);}
+.promotions .promotion-banner .percentage{position: absolute;top: 10px;left: 10px;color: var(--white-primary)}
+.promotions .promotion-banner .number{font-size: var(--fs-1);font-weight:700;letter-spacing: -3px;}
+.promotions .promotion-banner .cta h3{color: var(--white-primary);font-size: var(--fs-3);}
+
+.popular-products aside{display: flex;flex-direction: column;gap:10px}
+.popular-products aside ul{list-style: none;padding: 0;margin: 0}
+.popular-products aside li:not(:last-child){margin-bottom:5px;}
+.popular-products aside ul a{position:relative;background-color:var(--grey-100);border:1px solid var(--grey-200);border-radius:var(--border-radius);font-size:var(--fs-5);color: var(--black-primary);font-weight:600;display:inline-block;width: 100%;height: 100%;padding:10px;}
+.popular-products aside ul a::after{content: "";position: absolute;top: 50%;transform: translateY(-50%);right: 10px;width: 20px;aspect-ratio: 1;background-image: url(../upload/img/arrow-right.svg);background-size: cover;background-position: center;background-repeat: no-repeat}
+.popular-products aside ul a.selected::after{filter: brightness(0) saturate(100%) invert(40%) sepia(82%) saturate(4615%) hue-rotate(343deg) brightness(102%) contrast(97%)}
+.popular-products aside .banner{padding-inline:10px; flex-grow: 1;background-image: url(../upload/img/pp-banner.jpg);background-position: center;background-size: cover;border-radius: var(--border-radius)}
+.popular-products aside .banner .content{display: flex;flex-direction: column;margin-top:50%;}
+.popular-products aside .banner .content span{color:var(--white-primary)}
+.popular-products aside .banner .content span:nth-child(1){font-family:arial;font-size:var(--fs-2);font-weight:200;line-height:1}
+.popular-products aside .banner .content span:nth-child(2){font-size:var(--fs-1);font-weight:700;line-height: 1;color:#F7E8AA;}
+
+.item{padding: 10px;border: 1px solid var(--grey-200);border-radius: var(--border-radius);}
+.item .img-wrapper{width: 100%;aspect-ratio: 1;position: relative}
+.item .img-wrapper img{width: 100%;height: 100%;object-fit: cover}
+.item .add-to-bag{position: absolute;left: 50%;bottom:0;transform: translate(-50%, 50%);width: 35px;aspect-ratio: 1;border-radius: 50%;display: grid;place-items: center;background-color: var(--grey-100)}
+.item .add-to-bag img{width: 65%;height: 65%;object-fit: cover;pointer-events: none}
+.item .information{display: flex;flex-direction: column;align-items:center;padding:35px 10px 10px}
+.item .information .category{font-weight: 500;color: var(--black-tertiary);font-size: var(--fs-5)}
+.item .information .rating{display: flex; gap:10px;align-items:center;}
+.item .information .stars img{width: 15px}
+.item .information .rating span{font-size: 10px;color:var(--black-tertiary)}
+.item .information .name{text-align:center;font-size:var(--fs-4);font-weight: 600;margin:10px;}
+.item .information .discounted-price{font-weight:600;color:var(--cl-primary);}
+.item .information .original-price{font-size: var(--fs-5);color:var(--black-tertiary);text-decoration:line-through;margin-left:10px;}
+
+@media (max-width: 768px) {
+    .hero{background:linear-gradient(to right, #111111a2, transparent 90%),url(../upload/img/hero-img.webp);background-position:center;background-size:cover}
+    .hero :is(h1, h3:not(span)){color: var(--white-primary)}
+    .hero p{color: #ececec}
+}
